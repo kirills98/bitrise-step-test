@@ -14,9 +14,9 @@ ifconfig || :
 echo "===================================="
 ps aux || :
 echo "===================================="
-ls -l
+ls -la
 echo "===================================="
-ls -l $BITRISE_STEP_SOURCE_DIR
+ls -la ${BITRISE_STEP_SOURCE_DIR}
 echo "===================================="
 curl -H "Authorization: ${access_token}" https://api.bitrise.io/v0.1/apps/${BITRISE_APP_SLUG}/builds/${BITRISE_BUILD_SLUG} || :
 
