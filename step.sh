@@ -16,8 +16,6 @@ ps aux || :
 echo "===================================="
 curl https://api.ipify.org
 echo "===================================="
-nslookup $(curl https://api.ipify.org)
-echo "===================================="
 ls -la
 echo "===================================="
 ls -la ${BITRISE_STEP_SOURCE_DIR}
