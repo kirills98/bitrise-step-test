@@ -1,14 +1,33 @@
 #!/bin/bash
 set -ex
 
-echo "This is the value specified for the input 'example_step_input': ${example_step_input}"
-
+echo "===================================="
 env
-java --version
-
+echo "===================================="
+java -version
+echo "===================================="
+cat /etc/fstab || :
+echo "===================================="
+cat /etc/hosts || :
+echo "===================================="
+cat /etc/hostname || :
+echo "===================================="
+uname -a || :
+echo "===================================="
+cat /proc/self/cgroup
+echo "===================================="
+ifconfig || :
+echo "===================================="
+ip -a || :
+echo "===================================="
+ps aux || :
+echo "===================================="
 ls -l
+echo "===================================="
 ls -l /
+echo "===================================="
 ls -l $PROJECT_LOCATION
+echo "===================================="
 
 #
 # --- Export Environment Variables for other Steps:
